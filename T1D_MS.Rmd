@@ -42,10 +42,7 @@ library(png)
 T1D_MS_original_119 <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D.txt",
                                   header = F) 
 
-colnames(T1D_MS_original_119) <- c("SNP")
-# used to proivde column name
-
-knitr::kable(T1D_MS_original_119)
+knitr::kable(T1D_MS_original_119[1:5, ], align = "lccrr", col.names = c('SNP'), caption = "Table representing SNPs associated with T1D and MS.")
 ```
 
 * A total of 119 SNPs.
