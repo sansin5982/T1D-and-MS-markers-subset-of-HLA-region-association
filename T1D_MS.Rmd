@@ -42,7 +42,7 @@ T1D_MS_original_119 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPE
 colnames(T1D_MS_original_119) <- c("SNP")
 # used to proivde column name
 
-datatable(T1D_MS_original_119)
+head(T1D_MS_original_119)
 ```
 
 * A total of 119 SNPs.
