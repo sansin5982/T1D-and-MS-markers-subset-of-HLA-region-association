@@ -62,3 +62,41 @@ T1D_MS_original_110 <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PR
 
 head(T1D_MS_original_110)
 ```
+
+* Identify 9 missing SNPs
+
+```{r}
+# Chekcing difference of SNPs in T1D_MS_original_119 file and T1D_MS_original_110 file
+
+setdiff(T1D_MS_original_119$SNP, T1D_MS_original_110$V6)
+```
+
+* missing SNP IDs were renamed from PUBMED
+
+      rs6931717 > rs3095345
+      
+      rs7452756 > rs4516988
+      
+      rs12199773 > rs3130952
+      
+      rs6937967 >  rs3130534
+      
+      rs12178292 > rs2844558
+      
+      rs10456058 >  rs2734573
+      
+      rs7382662 >  rs3129305
+      
+      rs10807118 >  rs3130578
+      
+      rs10947377 > rs3130179
+      
+* Created a new file T1D_2.txt after chainging SNP ids
+* Rerun in ANNOVAR and obtained results for all 119 SNPs 
+
+```{r}
+T1D_MS_new_119 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D_MS_formatted_2.txt", 
+                             header = F)
+
+head(T1D_MS_new_119)
+```      

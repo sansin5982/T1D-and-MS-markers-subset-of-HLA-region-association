@@ -34,3 +34,44 @@ humandb/hg19\_snp138.txt &gt; T1D\_MS\_formatted
     ## 4 chr6 29704083 29704083  C  T rs1736916
     ## 5 chr6 29704400 29704400  T  C rs1736913
     ## 6 chr6 29708222 29708222  T  C rs1610603
+
+-   Identify 9 missing SNPs
+
+<!-- -->
+
+    ## [1] "rs6931717"  "rs7452756"  "rs12199773" "rs6937967"  "rs12178292"
+    ## [6] "rs10456058" "rs7382662"  "rs10807118" "rs10947377"
+
+-   missing SNP IDs were renamed from PUBMED
+
+        rs6931717 > rs3095345
+
+        rs7452756 > rs4516988
+
+        rs12199773 > rs3130952
+
+        rs6937967 >  rs3130534
+
+        rs12178292 > rs2844558
+
+        rs10456058 >  rs2734573
+
+        rs7382662 >  rs3129305
+
+        rs10807118 >  rs3130578
+
+        rs10947377 > rs3130179
+
+-   Created a new file T1D\_2.txt after chainging SNP ids
+
+-   Rerun in ANNOVAR and obtained results for all 119 SNPs
+
+<!-- -->
+
+    ##     V1       V2       V3 V4 V5        V6
+    ## 1 chr6 29692305 29692305  A  G rs1632953
+    ## 2 chr6 29694427 29694427  C  T rs1059174
+    ## 3 chr6 29696209 29696209  G  A rs1736921
+    ## 4 chr6 29704083 29704083  C  T rs1736916
+    ## 5 chr6 29704400 29704400  T  C rs1736913
+    ## 6 chr6 29708222 29708222  T  C rs1610603
