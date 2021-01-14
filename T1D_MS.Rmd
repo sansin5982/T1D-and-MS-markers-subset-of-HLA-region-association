@@ -12,6 +12,7 @@ always_allow_html: true
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 ```
 
+
 ```{r}
 # This document depends on the following packages:
 library(rlang)
@@ -44,14 +45,7 @@ T1D_MS_original_119 <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PR
 colnames(T1D_MS_original_119) <- c("SNP")
 # used to proivde column name
 
-datatable(T1D_MS_original_119, class = 'cell-border stripe', 
-          caption = 'Table 1: Main file.',
-          options = list(pageLength = 2, autowidth = TRUE,
-  initComplete = JS(
-    "function(settings, json) {",
-    "$(this.api().table().header()).css({'background-color': '#000000', 'color': '#4c4c4c'});",
-    "}")
-))
+knitr::kable(T1D_MS_original_119)
 ```
 
 * A total of 119 SNPs.
