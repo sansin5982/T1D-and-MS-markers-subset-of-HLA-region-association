@@ -59,8 +59,7 @@ convert2annovar.pl -format rsid T1D.txt -dbsnpfile humandb/hg19_snp138.txt > T1D
 # duplicate SNPs due to HLA region were removed from ANNOVAR file
 T1D_MS_original_110 <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D_MS_formatted.txt",
                                   header = F)
-
-head(T1D_MS_original_110)
+knitr::kable(T1D_MS_original_110[1:5, ], align = "lccrr", caption = "SNPs run in ANNOVAR.")
 ```
 
 * Identify 9 missing SNPs
@@ -98,7 +97,7 @@ setdiff(T1D_MS_original_119$SNP, T1D_MS_original_110$V6)
 T1D_MS_new_119 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D_MS_formatted_2.txt", 
                              header = F)
 
-head(T1D_MS_new_119)
+knitr::kable(T1D_MS_new_119[1:5, ], align = "lccrr", caption = "SNP added with 9 missing data.")
 ```
 
 # ANNOVAR ANALYSIS

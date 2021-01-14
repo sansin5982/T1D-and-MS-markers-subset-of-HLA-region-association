@@ -39,15 +39,15 @@ convert2annovar.pl -format rsid T1D.txt -dbsnpfile humandb/hg19_snp138.txt > T1D
 * 119 SNPs records input; 110 SNPs records as output, 9 SNPs missing
 
 
-```
-##     V1       V2       V3 V4 V5        V6
-## 1 chr6 29692305 29692305  A  G rs1632953
-## 2 chr6 29694427 29694427  C  T rs1059174
-## 3 chr6 29696209 29696209  G  A rs1736921
-## 4 chr6 29704083 29704083  C  T rs1736916
-## 5 chr6 29704400 29704400  T  C rs1736913
-## 6 chr6 29708222 29708222  T  C rs1610603
-```
+Table: SNPs run in ANNOVAR.
+
+|V1   |    V2    |    V3    | V4| V5|V6        |
+|:----|:--------:|:--------:|--:|--:|:---------|
+|chr6 | 29692305 | 29692305 |  A|  G|rs1632953 |
+|chr6 | 29694427 | 29694427 |  C|  T|rs1059174 |
+|chr6 | 29696209 | 29696209 |  G|  A|rs1736921 |
+|chr6 | 29704083 | 29704083 |  C|  T|rs1736916 |
+|chr6 | 29704400 | 29704400 |  T|  C|rs1736913 |
 
 * Identify 9 missing SNPs
 
@@ -80,15 +80,15 @@ convert2annovar.pl -format rsid T1D.txt -dbsnpfile humandb/hg19_snp138.txt > T1D
 * Rerun in ANNOVAR and obtained results for all 119 SNPs 
 
 
-```
-##     V1       V2       V3 V4 V5        V6
-## 1 chr6 29692305 29692305  A  G rs1632953
-## 2 chr6 29694427 29694427  C  T rs1059174
-## 3 chr6 29696209 29696209  G  A rs1736921
-## 4 chr6 29704083 29704083  C  T rs1736916
-## 5 chr6 29704400 29704400  T  C rs1736913
-## 6 chr6 29708222 29708222  T  C rs1610603
-```
+Table: SNP added with 9 missing data.
+
+|V1   |    V2    |    V3    | V4| V5|V6        |
+|:----|:--------:|:--------:|--:|--:|:---------|
+|chr6 | 29692305 | 29692305 |  A|  G|rs1632953 |
+|chr6 | 29694427 | 29694427 |  C|  T|rs1059174 |
+|chr6 | 29696209 | 29696209 |  G|  A|rs1736921 |
+|chr6 | 29704083 | 29704083 |  C|  T|rs1736916 |
+|chr6 | 29704400 | 29704400 |  T|  C|rs1736913 |
 
 # ANNOVAR ANALYSIS
 
@@ -132,8 +132,8 @@ convert2annovar.pl -format rsid T1D.txt -dbsnpfile humandb/hg19_snp138.txt > T1D
 
 
 * We will use known gene as reference to create table
-<!--html_preserve--><div id="htmlwidget-3e8ad06121aaef5139dd" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3e8ad06121aaef5139dd">{"x":{"visdat":{"3f0c20c5571a":["function () ","plotlyVisDat"],"3f0c22392710":["function () ","data"],"3f0c562b1ed5":["function () ","data"],"3f0c3a32258":["function () ","data"]},"cur_data":"3f0c3a32258","attrs":{"3f0c22392710":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"UCSC","domain":{"x":[0,0.4],"y":[0.5,0.9]},"inherit":true},"3f0c562b1ed5":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"Ensmbel","domain":{"x":[0.6,1],"y":[0.5,0.9]},"inherit":true},"3f0c3a32258":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"NCBI","domain":{"x":[0.3,0.7],"y":[0.2,0.6]},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Pie Charts showing genomic regions from different databases","showlegend":false,"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"values":[1,3,60,38,6,2,7,2],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR3"],"type":"pie","textinfo":"label+percent","name":"UCSC","domain":{"x":[0,0.4],"y":[0.5,0.9]},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[3,3,51,33,8,7,12,1,1],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR3","UTR5"],"type":"pie","textinfo":"label+percent","name":"Ensmbel","domain":{"x":[0.6,1],"y":[0.5,0.9]},"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[1,3,64,30,4,9,7,1],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR5"],"type":"pie","textinfo":"label+percent","name":"NCBI","domain":{"x":[0.3,0.7],"y":[0.2,0.6]},"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-ee5546a7b55b4cb20d28" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ee5546a7b55b4cb20d28">{"x":{"visdat":{"1300343220a8":["function () ","plotlyVisDat"],"13007c7a30c2":["function () ","data"],"13007e736047":["function () ","data"],"13001d802beb":["function () ","data"]},"cur_data":"13001d802beb","attrs":{"13007c7a30c2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"UCSC","domain":{"x":[0,0.4],"y":[0.5,0.9]},"inherit":true},"13007e736047":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"Ensmbel","domain":{"x":[0.6,1],"y":[0.5,0.9]},"inherit":true},"13001d802beb":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"NCBI","domain":{"x":[0.3,0.7],"y":[0.2,0.6]},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Pie Charts showing genomic regions from different databases","showlegend":false,"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"values":[1,3,60,38,6,2,7,2],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR3"],"type":"pie","textinfo":"label+percent","name":"UCSC","domain":{"x":[0,0.4],"y":[0.5,0.9]},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[3,3,51,33,8,7,12,1,1],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR3","UTR5"],"type":"pie","textinfo":"label+percent","name":"Ensmbel","domain":{"x":[0.6,1],"y":[0.5,0.9]},"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[1,3,64,30,4,9,7,1],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR5"],"type":"pie","textinfo":"label+percent","name":"NCBI","domain":{"x":[0.3,0.7],"y":[0.2,0.6]},"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
-<!--html_preserve--><div id="htmlwidget-46df08634648600dd3ae" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-46df08634648600dd3ae">{"x":{"visdat":{"3f0c20205f2a":["function () ","plotlyVisDat"]},"cur_data":"3f0c20205f2a","attrs":{"3f0c20205f2a":{"labels":{},"values":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie","hole":0.2,"textinfo":"label+percent","showlegend":false,"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR5"],"values":[1,3,64,30,4,9,7,1],"type":"pie","hole":0.2,"textinfo":"label+percent","showlegend":false,"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-72f95678c2235c65af59" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-72f95678c2235c65af59">{"x":{"visdat":{"130033b6db7":["function () ","plotlyVisDat"]},"cur_data":"130033b6db7","attrs":{"130033b6db7":{"labels":{},"values":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie","hole":0.2,"textinfo":"label+percent","showlegend":false,"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR5"],"values":[1,3,64,30,4,9,7,1],"type":"pie","hole":0.2,"textinfo":"label+percent","showlegend":false,"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
