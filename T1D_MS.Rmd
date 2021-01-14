@@ -2,7 +2,7 @@
 title: "T1D_MS"
 author: "Sandeep Singh"
 date: "14/01/2021"
-output: md_document
+output: github_document
 always_allow_html: true
 ---
 
@@ -42,7 +42,7 @@ T1D_MS_original_119 <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PR
 colnames(T1D_MS_original_119) <- c("SNP")
 # used to proivde column name
 
-head(T1D_MS_original_119)
+datatable(T1D_MS_original_119)
 ```
 
 * A total of 119 SNPs.
@@ -99,4 +99,74 @@ T1D_MS_new_119 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in
                              header = F)
 
 head(T1D_MS_new_119)
+```
+
+# ANNOVAR ANALYSIS
+
+## Gene based annotation
+
+### Known Gene (UCSC)
+```{r}
+Known_T1D <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Gene_based/Known_gene_T1D.variant_function", header = F)
+colnames(Known_T1D) <- c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP") 
+
+Known_T1D$BP_1 <- as.character(Known_T1D$BP_1)
+head(Known_T1D)
+```
+
+### Ensembel Gene
+```{r}
+Ens_T1D <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Gene_based/Ens_gene_T1D.variant_function", header = F)
+colnames(Ens_T1D) <- c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP")
+
+head(Ens_T1D)
 ```      
+
+### Ref Gene (NCBI)
+```{r}
+Ref_T1D <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Gene_based/Ref_gene_T1D.variant_function", header = F)
+colnames(Ref_T1D) <- c("Genomic_region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP")
+
+head(Ref_T1D)
+```
+
+
+* We will use known gene as reference to create table
+```{r}
+df <- Known_T1D %>% 
+  select(`Genomic region`, SNP) %>%
+  rename(Known_gene = 'Genomic region') %>% 
+  left_join(Ens_T1D, by = 'SNP') %>% 
+  select(Known_gene, 'Genomic region', SNP) %>% 
+  rename(Ens_gene = 'Genomic region') %>% 
+  left_join(Ref_T1D, by = "SNP") %>% 
+  rename(Ref_gene = 'Genomic_region') %>% 
+  select(SNP, Known_gene, Ens_gene, Ref_gene)
+
+Genomic_region <- plot_ly() %>% 
+  add_pie(data = count(df, Known_gene), labels = ~Known_gene, values = ~n, 
+          textinfo = 'label+percent',
+          name = "UCSC", domain = list(x = c(0, 0.4), y = c(0.5, 0.9))) %>% 
+          add_pie(data = count(df, Ens_gene), labels = ~Ens_gene, values = ~n,           textinfo = 'label+percent',
+          name = "Ensmbel", domain = list(x = c(0.6, 1), y = c(0.5, 0.9))) %>% 
+          add_pie(data = count(df, Ref_gene), labels = ~Ref_gene, values = ~n,           textinfo = 'label+percent',
+          name = "NCBI", domain = list(x = c(0.30, 0.70), y = c(0.2, 0.6))) %>% 
+          layout(title = "Pie Charts showing genomic regions from different databases", showlegend = F,
+                      xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+Genomic_region
+```
+
+```{r}
+# Donut plot
+T1D_Ref <- Ref_T1D %>%
+  group_by(Genomic_region) %>%
+  summarize(count = n()) %>%
+  plot_ly(labels =~Genomic_region, values = ~count) %>%
+  add_pie(hole = 0.2,
+          textinfo = 'label+percent',
+          showlegend = FALSE)
+
+T1D_Ref
+```
