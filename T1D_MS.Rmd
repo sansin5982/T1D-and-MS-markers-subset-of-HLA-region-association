@@ -1,0 +1,49 @@
+---
+title: "T1D_MS"
+author: "Sandeep Singh"
+date: "Last Updated: `r format(Sys.time(), '%d, %B, %Y at %H:%M')`"
+output: md_document
+always_allow_html: true
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+```{r}
+# This document depends on the following packages:
+library(rlang)
+library(dplyr)
+library(tibble)
+library(readxl)
+library(DT)
+library(tidyr)
+library(data.table)
+library(ggplot2)
+library(ggrepel)
+library(forcats)
+library(scales)
+library(grid)
+library(purrr) # to append multiple dataframes
+library(plotly)
+library(VennDiagram)
+library(RColorBrewer)
+library(png)
+```
+
+* T1D.txt file was generated from previous researches on Type-1-diabetes and multiple sclerosis.  
+* This file contains only 119 SNPs as common markers for T1D and MS. 
+
+## File preparation
+```{r}
+T1D_MS_original_119 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D.txt",
+                                  header = F) 
+
+colnames(T1D_MS_original_119) <- c("SNP")
+# used to proivde column name
+
+datatable(T1D_MS_original_119)
+```
+
+* A total of 119 SNPs.
+* This file was used to create ANNOVAR formatted file.
