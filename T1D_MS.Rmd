@@ -31,12 +31,12 @@ library(RColorBrewer)
 library(png)
 ```
 
-* T1D.txt file was generated from previous researches on Type-1-diabetes and multiple sclerosis.  
+* raw_data.txt file was generated from previous researches on Type-1-diabetes and multiple sclerosis.  
 * This file contains only 119 SNPs as common markers for T1D and MS. 
 
 ## File preparation
 ```{r}
-T1D_MS_original_119 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D.txt",
+T1D_MS_original_119 <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D.txt",
                                   header = F) 
 
 colnames(T1D_MS_original_119) <- c("SNP")
@@ -47,3 +47,25 @@ head(T1D_MS_original_119)
 
 * A total of 119 SNPs.
 * This file was used to create ANNOVAR formatted file.
+
+### File preparation by ANNOVAR
+* Command used in ANNOVAR: 
+
+convert2annovar.pl -format rsid T1D.txt -dbsnpfile humandb/hg19_snp138.txt > T1D_MS_formatted
+
+* 119 SNPs records input; 110 SNPs records as output, 9 SNPs missing
+
+```{r}
+# duplicate SNPs due to HLA region were removed from ANNOVAR file
+T1D_MS_original_110 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D_MS_formatted.txt",
+                                  header = F)
+
+datatable(T1D_MS_original_110, class = 'cell-border stripe', 
+          caption = 'Table 2: Annovar formatted file.',
+          options = list(pageLength = 5, autowidth = TRUE,
+  initComplete = JS(
+    "function(settings, json) {",
+    "$(this.api().table().header()).css({'background-color': '#000', 'color': '#4c4c4c'});",
+    "}")
+))
+```
