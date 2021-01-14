@@ -1,7 +1,7 @@
 ---
 title: "T1D_MS"
 author: "Sandeep Singh"
-date: "Last Updated: `r format(Sys.time(), '%d, %B, %Y at %H:%M')`"
+date: "14/01/2021"
 output: md_document
 always_allow_html: true
 ---
@@ -57,15 +57,8 @@ convert2annovar.pl -format rsid T1D.txt -dbsnpfile humandb/hg19_snp138.txt > T1D
 
 ```{r}
 # duplicate SNPs due to HLA region were removed from ANNOVAR file
-T1D_MS_original_110 <- read.table("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D_MS_formatted.txt",
+T1D_MS_original_110 <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/T1D_MS_formatted.txt",
                                   header = F)
 
-datatable(T1D_MS_original_110, class = 'cell-border stripe', 
-          caption = 'Table 2: Annovar formatted file.',
-          options = list(pageLength = 5, autowidth = TRUE,
-  initComplete = JS(
-    "function(settings, json) {",
-    "$(this.api().table().header()).css({'background-color': '#000', 'color': '#4c4c4c'});",
-    "}")
-))
+head(T1D_MS_original_110)
 ```
