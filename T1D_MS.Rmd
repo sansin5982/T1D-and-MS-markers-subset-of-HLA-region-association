@@ -109,63 +109,61 @@ knitr::kable(T1D_MS_new_119[1:5, ], align = "lccrr", caption = "SNP added with 9
 Known_T1D <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Gene_based/Known_gene_T1D.variant_function", header = F)
 colnames(Known_T1D) <- c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP") 
 
+knitr::kable(Known_T1D[1:5, ], align = "lccrr", col.names = c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP"), caption = "Table representing SNPs information from known gene.")
+
 Known_T1D$BP_1 <- as.character(Known_T1D$BP_1)
-head(Known_T1D)
 ```
 
 ### Ensembel Gene
 ```{r}
 Ens_T1D <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Gene_based/Ens_gene_T1D.variant_function", header = F)
-colnames(Ens_T1D) <- c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP")
 
-head(Ens_T1D)
+knitr::kable(Ens_T1D[1:5, ], align = "lccrr", col.names = c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP"), caption = "Table representing SNPs information from Ensemble gene.")
 ```      
 
 ### Ref Gene (NCBI)
 ```{r}
 Ref_T1D <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Gene_based/Ref_gene_T1D.variant_function", header = F)
-colnames(Ref_T1D) <- c("Genomic_region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP")
 
-head(Ref_T1D)
+knitr::kable(Ref_T1D[1:5, ], align = "lccrr", col.names = c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP"), caption = "Table representing SNPs information from Reference gene.")
 ```
 
-
-* We will use known gene as reference to create table
+# RegulomeDB results
 ```{r}
-df <- Known_T1D %>% 
-  select(`Genomic region`, SNP) %>%
-  rename(Known_gene = 'Genomic region') %>% 
-  left_join(Ens_T1D, by = 'SNP') %>% 
-  select(Known_gene, 'Genomic region', SNP) %>% 
-  rename(Ens_gene = 'Genomic region') %>% 
-  left_join(Ref_T1D, by = "SNP") %>% 
-  rename(Ref_gene = 'Genomic_region') %>% 
-  select(SNP, Known_gene, Ens_gene, Ref_gene)
-
-Genomic_region <- plot_ly() %>% 
-  add_pie(data = count(df, Known_gene), labels = ~Known_gene, values = ~n, 
-          textinfo = 'label+percent',
-          name = "UCSC", domain = list(x = c(0, 0.4), y = c(0.5, 0.9))) %>% 
-          add_pie(data = count(df, Ens_gene), labels = ~Ens_gene, values = ~n,           textinfo = 'label+percent',
-          name = "Ensmbel", domain = list(x = c(0.6, 1), y = c(0.5, 0.9))) %>% 
-          add_pie(data = count(df, Ref_gene), labels = ~Ref_gene, values = ~n,           textinfo = 'label+percent',
-          name = "NCBI", domain = list(x = c(0.30, 0.70), y = c(0.2, 0.6))) %>% 
-          layout(title = "Pie Charts showing genomic regions from different databases", showlegend = F,
-                      xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-                      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-
-Genomic_region
+# RegulomeDB files were downloaded from RegulomeDB database
+# Reading multiple files in R for regulomeDB analysis
+# path <- setwd("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/RegulomeDB_Results")
+# file.list <- list.files(path = ".", pattern = "*xlsx")
+# RDB.list <- lapply(file.list, read_excel)
 ```
 
 ```{r}
-# Donut plot
-T1D_Ref <- Ref_T1D %>%
-  group_by(Genomic_region) %>%
-  summarize(count = n()) %>%
-  plot_ly(labels =~Genomic_region, values = ~count) %>%
-  add_pie(hole = 0.2,
-          textinfo = 'label+percent',
-          showlegend = FALSE)
+# RDB_T1D <- bind_rows(RDB.list, .id = "id") %>% 
+#   rename(Regulome_DB = "RDB_score")
 
-T1D_Ref
+# write.table(RDB_T1D, file = "RegulomeDB_score.txt",
+#             sep = "\t",
+#             row.names = FALSE,
+#             col.names = TRUE,
+#             quote = FALSE)
 ```
+
+```{r}
+RDB_T1D <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/RegulomeDB_Results/RegulomeDB_score.txt")
+
+knitr::kable(RDB_T1D[1:5, ], align = "lccrr", caption = "RegulomeDB score.")
+```
+
+```{r}
+table(RDB_T1D$RDB_score)
+```
+
+Figure Bar chart representing RegulomeDB score
+```{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure 1: Bar chart representing RegulomeDB score"}
+ggplot(RDB_T1D, aes(x = RDB_score, fill = RDB_score))+
+  geom_bar()+
+  labs(x = "RegulomeDB score", y = "Total number of SNPs")+
+  theme_classic()+
+  theme(legend.position = "none")
+```
+

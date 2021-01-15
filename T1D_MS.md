@@ -96,44 +96,66 @@ Table: SNP added with 9 missing data.
 
 ### Known Gene (UCSC)
 
-```
-##   Genomic region      Gene Chromosome     BP_1     BP_2 A1 A2       SNP
-## 1       intronic     HLA-F       chr6 29692305 29692305  A  G rs1632953
-## 2   ncRNA_exonic HLA-F-AS1       chr6 29694427 29694427  C  T rs1059174
-## 3   ncRNA_exonic HLA-F-AS1       chr6 29696209 29696209  G  A rs1736921
-## 4   ncRNA_exonic HLA-F-AS1       chr6 29704083 29704083  C  T rs1736916
-## 5   ncRNA_exonic HLA-F-AS1       chr6 29704400 29704400  T  C rs1736913
-## 6 ncRNA_intronic HLA-F-AS1       chr6 29708222 29708222  T  C rs1610603
-```
+Table: Table representing SNPs information from known gene.
+
+|Genomic region |   Gene    | Chromosome |     BP_1|     BP_2|A1 | A2 |    SNP    |
+|:--------------|:---------:|:----------:|--------:|--------:|:--|:--:|:---------:|
+|intronic       |   HLA-F   |    chr6    | 29692305| 29692305|A  | G  | rs1632953 |
+|ncRNA_exonic   | HLA-F-AS1 |    chr6    | 29694427| 29694427|C  | T  | rs1059174 |
+|ncRNA_exonic   | HLA-F-AS1 |    chr6    | 29696209| 29696209|G  | A  | rs1736921 |
+|ncRNA_exonic   | HLA-F-AS1 |    chr6    | 29704083| 29704083|C  | T  | rs1736916 |
+|ncRNA_exonic   | HLA-F-AS1 |    chr6    | 29704400| 29704400|T  | C  | rs1736913 |
 
 ### Ensembel Gene
 
-```
-##   Genomic region            Gene Chromosome     BP_1     BP_2 A1 A2       SNP
-## 1       intronic ENSG00000204642       chr6 29692305 29692305  A  G rs1632953
-## 2   ncRNA_exonic ENSG00000214922       chr6 29694427 29694427  C  T rs1059174
-## 3   ncRNA_exonic ENSG00000214922       chr6 29696209 29696209  G  A rs1736921
-## 4   ncRNA_exonic ENSG00000214922       chr6 29704083 29704083  C  T rs1736916
-## 5   ncRNA_exonic ENSG00000214922       chr6 29704400 29704400  T  C rs1736913
-## 6 ncRNA_intronic ENSG00000214922       chr6 29708222 29708222  T  C rs1610603
-```
+Table: Table representing SNPs information from Ensemble gene.
+
+|Genomic region |      Gene       | Chromosome |     BP_1|     BP_2|A1 | A2 |    SNP    |
+|:--------------|:---------------:|:----------:|--------:|--------:|:--|:--:|:---------:|
+|intronic       | ENSG00000204642 |    chr6    | 29692305| 29692305|A  | G  | rs1632953 |
+|ncRNA_exonic   | ENSG00000214922 |    chr6    | 29694427| 29694427|C  | T  | rs1059174 |
+|ncRNA_exonic   | ENSG00000214922 |    chr6    | 29696209| 29696209|G  | A  | rs1736921 |
+|ncRNA_exonic   | ENSG00000214922 |    chr6    | 29704083| 29704083|C  | T  | rs1736916 |
+|ncRNA_exonic   | ENSG00000214922 |    chr6    | 29704400| 29704400|T  | C  | rs1736913 |
 
 ### Ref Gene (NCBI)
 
+Table: Table representing SNPs information from Reference gene.
+
+|Genomic region |   Gene    | Chromosome |     BP_1|     BP_2|A1 | A2 |    SNP    |
+|:--------------|:---------:|:----------:|--------:|--------:|:--|:--:|:---------:|
+|intronic       |   HLA-F   |    chr6    | 29692305| 29692305|A  | G  | rs1632953 |
+|ncRNA_exonic   | HLA-F-AS1 |    chr6    | 29694427| 29694427|C  | T  | rs1059174 |
+|ncRNA_exonic   | HLA-F-AS1 |    chr6    | 29696209| 29696209|G  | A  | rs1736921 |
+|ncRNA_intronic | HLA-F-AS1 |    chr6    | 29704083| 29704083|C  | T  | rs1736916 |
+|ncRNA_intronic | HLA-F-AS1 |    chr6    | 29704400| 29704400|T  | C  | rs1736913 |
+
+# RegulomeDB results
+
+
+
+
+
+Table: RegulomeDB score.
+
+|Chr  |    SNP    | RDB_score |
+|:----|:---------:|:---------:|
+|chr6 | rs2517646 |    1b     |
+|chr6 | rs1632953 |    1f     |
+|chr6 | rs1059174 |    1f     |
+|chr6 | rs1736921 |    1f     |
+|chr6 | rs1736916 |    1f     |
+
+
 ```
-##   Genomic_region      Gene Chromosome     BP_1     BP_2 A1 A2       SNP
-## 1       intronic     HLA-F       chr6 29692305 29692305  A  G rs1632953
-## 2   ncRNA_exonic HLA-F-AS1       chr6 29694427 29694427  C  T rs1059174
-## 3   ncRNA_exonic HLA-F-AS1       chr6 29696209 29696209  G  A rs1736921
-## 4 ncRNA_intronic HLA-F-AS1       chr6 29704083 29704083  C  T rs1736916
-## 5 ncRNA_intronic HLA-F-AS1       chr6 29704400 29704400  T  C rs1736913
-## 6 ncRNA_intronic HLA-F-AS1       chr6 29708222 29708222  T  C rs1610603
+## 
+## 1b 1d 1f 2b  5  6  7 
+##  3  2 62  1  2 45  1
 ```
 
+Figure Bar chart representing RegulomeDB score
+<div class="figure" style="text-align: center">
+<img src="T1D_MS_files/figure-html/unnamed-chunk-13-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
+<p class="caption">Figure 1: Bar chart representing RegulomeDB score</p>
+</div>
 
-* We will use known gene as reference to create table
-<!--html_preserve--><div id="htmlwidget-ee5546a7b55b4cb20d28" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ee5546a7b55b4cb20d28">{"x":{"visdat":{"1300343220a8":["function () ","plotlyVisDat"],"13007c7a30c2":["function () ","data"],"13007e736047":["function () ","data"],"13001d802beb":["function () ","data"]},"cur_data":"13001d802beb","attrs":{"13007c7a30c2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"UCSC","domain":{"x":[0,0.4],"y":[0.5,0.9]},"inherit":true},"13007e736047":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"Ensmbel","domain":{"x":[0.6,1],"y":[0.5,0.9]},"inherit":true},"13001d802beb":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","textinfo":"label+percent","name":"NCBI","domain":{"x":[0.3,0.7],"y":[0.2,0.6]},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Pie Charts showing genomic regions from different databases","showlegend":false,"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"values":[1,3,60,38,6,2,7,2],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR3"],"type":"pie","textinfo":"label+percent","name":"UCSC","domain":{"x":[0,0.4],"y":[0.5,0.9]},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[3,3,51,33,8,7,12,1,1],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR3","UTR5"],"type":"pie","textinfo":"label+percent","name":"Ensmbel","domain":{"x":[0.6,1],"y":[0.5,0.9]},"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[1,3,64,30,4,9,7,1],"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR5"],"type":"pie","textinfo":"label+percent","name":"NCBI","domain":{"x":[0.3,0.7],"y":[0.2,0.6]},"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-<!--html_preserve--><div id="htmlwidget-72f95678c2235c65af59" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-72f95678c2235c65af59">{"x":{"visdat":{"130033b6db7":["function () ","plotlyVisDat"]},"cur_data":"130033b6db7","attrs":{"130033b6db7":{"labels":{},"values":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie","hole":0.2,"textinfo":"label+percent","showlegend":false,"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["downstream","exonic","intergenic","intronic","ncRNA_exonic","ncRNA_intronic","upstream","UTR5"],"values":[1,3,64,30,4,9,7,1],"type":"pie","hole":0.2,"textinfo":"label+percent","showlegend":false,"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
