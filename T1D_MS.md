@@ -130,6 +130,26 @@ Table: Table representing SNPs information from Reference gene.
 |ncRNA_intronic | HLA-F-AS1 |    chr6    | 29704083| 29704083|C  | T  | rs1736916 |
 |ncRNA_intronic | HLA-F-AS1 |    chr6    | 29704400| 29704400|T  | C  | rs1736913 |
 
+## Region based annotation
+
+### Conserved genomic elements annotation
+
+Table: Conserved Genomic Score from NCBI database.
+
+|Con_Sequence_score |    SNP     |
+|:------------------|:----------:|
+|Score=737          | rs1059174  |
+|Score=284          | rs3130558  |
+|Score=798          | rs6906846  |
+|Score=369          | rs7382297  |
+|Score=511          | rs2736172  |
+|Score=304          | rs2076530  |
+|Score=340          | rs9268831  |
+|Score=361          | rs17840186 |
+
+* In evolutionary biology, conserved sequences are identical or similar sequences in nucleic acids (DNA and RNA) or proteins across species (orthologous sequences), or within a genome (paralogous sequences), or between donor and receptor taxa (xenologous sequences). Conservation indicates that a sequence has been maintained by natural selection.
+
+
 # RegulomeDB results
 
 
@@ -155,7 +175,7 @@ Table: RegulomeDB score.
 
 Figure Bar chart representing RegulomeDB score
 <div class="figure" style="text-align: center">
-<img src="T1D_MS_files/figure-html/unnamed-chunk-13-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
+<img src="T1D_MS_files/figure-html/unnamed-chunk-14-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
 <p class="caption">Figure 1: Bar chart representing RegulomeDB score</p>
 </div>
 

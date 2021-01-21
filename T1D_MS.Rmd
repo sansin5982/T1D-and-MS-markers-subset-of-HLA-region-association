@@ -128,6 +128,22 @@ Ref_T1D <- read.table("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_M
 knitr::kable(Ref_T1D[1:5, ], align = "lccrr", col.names = c("Genomic region", "Gene", "Chromosome", "BP_1", "BP_2", "A1", "A2", "SNP"), caption = "Table representing SNPs information from Reference gene.")
 ```
 
+## Region based annotation
+
+### Conserved genomic elements annotation
+```{r}
+Con_GE <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_consgenele.hg19_phastConsElements46way") %>%
+  separate(V2, c("Con_Sequence_score", "LOD"), sep = ";") %>% 
+  rename(SNP = V8) %>% 
+  select(Con_Sequence_score, SNP)
+
+
+knitr::kable(Con_GE, align = "lccrr", caption = "Conserved Genomic Score from NCBI database.")
+```
+
+* In evolutionary biology, conserved sequences are identical or similar sequences in nucleic acids (DNA and RNA) or proteins across species (orthologous sequences), or within a genome (paralogous sequences), or between donor and receptor taxa (xenologous sequences). Conservation indicates that a sequence has been maintained by natural selection.
+
+
 # RegulomeDB results
 ```{r}
 # RegulomeDB files were downloaded from RegulomeDB database
