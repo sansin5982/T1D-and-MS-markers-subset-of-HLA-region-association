@@ -143,6 +143,38 @@ knitr::kable(Con_GE, align = "lccrr", caption = "Conserved Genomic Score from NC
 
 * In evolutionary biology, conserved sequences are identical or similar sequences in nucleic acids (DNA and RNA) or proteins across species (orthologous sequences), or within a genome (paralogous sequences), or between donor and receptor taxa (xenologous sequences). Conservation indicates that a sequence has been maintained by natural selection.
 
+### Transcription factor binding site
+
+```{r}
+TFBS <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_TFBS.hg19_tfbsConsSites") %>%
+  separate(V2, into = c("Score", "TFBS"), sep = 17) %>% # selecting TFBS site after 17
+  select(TFBS, V8) %>%
+  rename(SNP = V8) %>% 
+  separate(TFBS, c("TFBS", "V1")) %>% 
+  select(TFBS, SNP)
+
+knitr::kable(TFBS, align = "lccrr", caption = "Results from Transcription Factor Binding Site using TRANSFAC database.")
+```
+
+### Cytogenic band
+
+```{r}
+CB <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_cytoband.hg19_cytoBand") %>% 
+  select(V2, V8) %>% 
+  rename(Cytoband = V2, SNP = V8) 
+
+knitr::kable(CB, align = "lccrr", caption = "Cytogenetic band of all SNPs.")
+```
+
+### Variants disrupting microRNAs and snoRNAs (wgRna)
+
+```{r}
+micro_sno <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_wgRna.hg19_wgRna") %>% 
+  select(V2, V8) %>% 
+  rename(wgRNA = V2, SNP = V8)
+
+knitr::kable(micro_sno, align = "lccrr", caption = "Results of variants disrupting microRNAs and snoRNAs.")
+```
 
 # RegulomeDB results
 ```{r}

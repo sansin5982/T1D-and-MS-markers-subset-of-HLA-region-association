@@ -149,6 +149,153 @@ Table: Conserved Genomic Score from NCBI database.
 
 * In evolutionary biology, conserved sequences are identical or similar sequences in nucleic acids (DNA and RNA) or proteins across species (orthologous sequences), or within a genome (paralogous sequences), or between donor and receptor taxa (xenologous sequences). Conservation indicates that a sequence has been maintained by natural selection.
 
+### Transcription factor binding site
+
+
+Table: Results from Transcription Factor Binding Site using TRANSFAC database.
+
+|TFBS |    SNP     |
+|:----|:----------:|
+|XBP1 | rs2736172  |
+|CEBP |  rs415929  |
+|ATF6 | rs9268831  |
+|YY1  | rs17840186 |
+
+### Cytogenic band
+
+
+Table: Cytogenetic band of all SNPs.
+
+|Cytoband |    SNP     |
+|:--------|:----------:|
+|6p22.1   | rs1632953  |
+|6p22.1   | rs1059174  |
+|6p22.1   | rs1736921  |
+|6p22.1   | rs1736916  |
+|6p22.1   | rs1736913  |
+|6p22.1   | rs1610603  |
+|6p22.1   | rs1633070  |
+|6p22.1   | rs1633069  |
+|6p22.1   | rs1610630  |
+|6p22.1   | rs1737068  |
+|6p22.1   | rs1737060  |
+|6p22.1   | rs2517646  |
+|6p21.33  | rs2516675  |
+|6p21.33  | rs3130000  |
+|6p21.33  | rs3094123  |
+|6p21.33  | rs3095345  |
+|6p21.33  | rs2530709  |
+|6p21.33  | rs2517538  |
+|6p21.33  | rs4713429  |
+|6p21.33  | rs9262615  |
+|6p21.33  | rs2523881  |
+|6p21.33  | rs2523880  |
+|6p21.33  | rs2233969  |
+|6p21.33  | rs1265052  |
+|6p21.33  | rs2233967  |
+|6p21.33  | rs3130981  |
+|6p21.33  | rs3095324  |
+|6p21.33  | rs3095314  |
+|6p21.33  | rs3130558  |
+|6p21.33  | rs3131009  |
+|6p21.33  | rs3130564  |
+|6p21.33  | rs2073723  |
+|6p21.33  | rs2106074  |
+|6p21.33  | rs9263804  |
+|6p21.33  | rs3130501  |
+|6p21.33  | rs3132524  |
+|6p21.33  | rs3095238  |
+|6p21.33  | rs4516988  |
+|6p21.33  | rs3130952  |
+|6p21.33  | rs9295965  |
+|6p21.33  | rs3130531  |
+|6p21.33  | rs3095250  |
+|6p21.33  | rs3130532  |
+|6p21.33  | rs3130534  |
+|6p21.33  | rs3132486  |
+|6p21.33  | rs6906846  |
+|6p21.33  | rs7382297  |
+|6p21.33  | rs2524095  |
+|6p21.33  | rs2524089  |
+|6p21.33  | rs2523535  |
+|6p21.33  | rs2523534  |
+|6p21.33  | rs2596437  |
+|6p21.33  | rs2844558  |
+|6p21.33  | rs5025315  |
+|6p21.33  | rs5022119  |
+|6p21.33  | rs2523638  |
+|6p21.33  | rs3997982  |
+|6p21.33  | rs2596571  |
+|6p21.33  | rs2523485  |
+|6p21.33  | rs2596517  |
+|6p21.33  | rs2516460  |
+|6p21.33  | rs3131622  |
+|6p21.33  | rs2248373  |
+|6p21.33  | rs2523650  |
+|6p21.33  | rs2904776  |
+|6p21.33  | rs2905747  |
+|6p21.33  | rs9267247  |
+|6p21.33  | rs3131631  |
+|6p21.33  | rs2734573  |
+|6p21.33  | rs2736177  |
+|6p21.33  | rs2736172  |
+|6p21.33  |  rs760293  |
+|6p21.33  | rs3130287  |
+|6p21.32  | rs3131294  |
+|6p21.32  |  rs438475  |
+|6p21.32  |  rs415929  |
+|6p21.32  | rs3115576  |
+|6p21.32  | rs9267971  |
+|6p21.32  | rs3130311  |
+|6p21.32  |  rs910049  |
+|6p21.32  | rs6907322  |
+|6p21.32  | rs3129934  |
+|6p21.32  | rs12528797 |
+|6p21.32  | rs2076530  |
+|6p21.32  | rs3806156  |
+|6p21.32  | rs7756262  |
+|6p21.32  | rs9268645  |
+|6p21.32  | rs3129877  |
+|6p21.32  | rs3135392  |
+|6p21.32  | rs9268831  |
+|6p21.32  | rs9268877  |
+|6p21.32  | rs9275765  |
+|6p21.32  | rs9275772  |
+|6p21.32  | rs9461799  |
+|6p21.32  | rs9469240  |
+|6p21.32  | rs9275793  |
+|6p21.32  | rs2227127  |
+|6p21.32  | rs9276429  |
+|6p21.32  | rs9276431  |
+|6p21.32  | rs9276432  |
+|6p21.32  | rs9276440  |
+|6p21.32  | rs7768538  |
+|6p21.32  | rs7453920  |
+|6p21.32  | rs2051549  |
+|6p21.32  | rs6902723  |
+|6p21.32  | rs6903130  |
+|6p21.32  | rs9296044  |
+|6p21.32  | rs2857212  |
+|6p21.32  | rs2621382  |
+|6p21.32  |  rs241427  |
+|6p21.32  | rs9276825  |
+|6p21.32  |  rs241403  |
+|6p21.32  | rs3101942  |
+|6p21.32  | rs1050391  |
+|6p21.32  | rs11539216 |
+|6p21.32  | rs17840186 |
+|6p21.32  | rs3129305  |
+|6p21.32  | rs3130578  |
+|6p21.32  | rs3130179  |
+
+### Variants disrupting microRNAs and snoRNAs (wgRna)
+
+
+Table: Results of variants disrupting microRNAs and snoRNAs.
+
+|wgRNA      |    SNP    |
+|:----------|:---------:|
+|Name=ACA38 | rs2736172 |
 
 # RegulomeDB results
 
@@ -175,7 +322,7 @@ Table: RegulomeDB score.
 
 Figure Bar chart representing RegulomeDB score
 <div class="figure" style="text-align: center">
-<img src="T1D_MS_files/figure-html/unnamed-chunk-14-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
+<img src="T1D_MS_files/figure-html/unnamed-chunk-17-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
 <p class="caption">Figure 1: Bar chart representing RegulomeDB score</p>
 </div>
 
