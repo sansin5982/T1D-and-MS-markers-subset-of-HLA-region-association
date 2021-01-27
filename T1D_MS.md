@@ -166,127 +166,19 @@ Table: Results from Transcription Factor Binding Site using TRANSFAC database.
 
 Table: Cytogenetic band of all SNPs.
 
-|Cytoband |    SNP     |
-|:--------|:----------:|
-|6p22.1   | rs1632953  |
-|6p22.1   | rs1059174  |
-|6p22.1   | rs1736921  |
-|6p22.1   | rs1736916  |
-|6p22.1   | rs1736913  |
-|6p22.1   | rs1610603  |
-|6p22.1   | rs1633070  |
-|6p22.1   | rs1633069  |
-|6p22.1   | rs1610630  |
-|6p22.1   | rs1737068  |
-|6p22.1   | rs1737060  |
-|6p22.1   | rs2517646  |
-|6p21.33  | rs2516675  |
-|6p21.33  | rs3130000  |
-|6p21.33  | rs3094123  |
-|6p21.33  | rs3095345  |
-|6p21.33  | rs2530709  |
-|6p21.33  | rs2517538  |
-|6p21.33  | rs4713429  |
-|6p21.33  | rs9262615  |
-|6p21.33  | rs2523881  |
-|6p21.33  | rs2523880  |
-|6p21.33  | rs2233969  |
-|6p21.33  | rs1265052  |
-|6p21.33  | rs2233967  |
-|6p21.33  | rs3130981  |
-|6p21.33  | rs3095324  |
-|6p21.33  | rs3095314  |
-|6p21.33  | rs3130558  |
-|6p21.33  | rs3131009  |
-|6p21.33  | rs3130564  |
-|6p21.33  | rs2073723  |
-|6p21.33  | rs2106074  |
-|6p21.33  | rs9263804  |
-|6p21.33  | rs3130501  |
-|6p21.33  | rs3132524  |
-|6p21.33  | rs3095238  |
-|6p21.33  | rs4516988  |
-|6p21.33  | rs3130952  |
-|6p21.33  | rs9295965  |
-|6p21.33  | rs3130531  |
-|6p21.33  | rs3095250  |
-|6p21.33  | rs3130532  |
-|6p21.33  | rs3130534  |
-|6p21.33  | rs3132486  |
-|6p21.33  | rs6906846  |
-|6p21.33  | rs7382297  |
-|6p21.33  | rs2524095  |
-|6p21.33  | rs2524089  |
-|6p21.33  | rs2523535  |
-|6p21.33  | rs2523534  |
-|6p21.33  | rs2596437  |
-|6p21.33  | rs2844558  |
-|6p21.33  | rs5025315  |
-|6p21.33  | rs5022119  |
-|6p21.33  | rs2523638  |
-|6p21.33  | rs3997982  |
-|6p21.33  | rs2596571  |
-|6p21.33  | rs2523485  |
-|6p21.33  | rs2596517  |
-|6p21.33  | rs2516460  |
-|6p21.33  | rs3131622  |
-|6p21.33  | rs2248373  |
-|6p21.33  | rs2523650  |
-|6p21.33  | rs2904776  |
-|6p21.33  | rs2905747  |
-|6p21.33  | rs9267247  |
-|6p21.33  | rs3131631  |
-|6p21.33  | rs2734573  |
-|6p21.33  | rs2736177  |
-|6p21.33  | rs2736172  |
-|6p21.33  |  rs760293  |
-|6p21.33  | rs3130287  |
-|6p21.32  | rs3131294  |
-|6p21.32  |  rs438475  |
-|6p21.32  |  rs415929  |
-|6p21.32  | rs3115576  |
-|6p21.32  | rs9267971  |
-|6p21.32  | rs3130311  |
-|6p21.32  |  rs910049  |
-|6p21.32  | rs6907322  |
-|6p21.32  | rs3129934  |
-|6p21.32  | rs12528797 |
-|6p21.32  | rs2076530  |
-|6p21.32  | rs3806156  |
-|6p21.32  | rs7756262  |
-|6p21.32  | rs9268645  |
-|6p21.32  | rs3129877  |
-|6p21.32  | rs3135392  |
-|6p21.32  | rs9268831  |
-|6p21.32  | rs9268877  |
-|6p21.32  | rs9275765  |
-|6p21.32  | rs9275772  |
-|6p21.32  | rs9461799  |
-|6p21.32  | rs9469240  |
-|6p21.32  | rs9275793  |
-|6p21.32  | rs2227127  |
-|6p21.32  | rs9276429  |
-|6p21.32  | rs9276431  |
-|6p21.32  | rs9276432  |
-|6p21.32  | rs9276440  |
-|6p21.32  | rs7768538  |
-|6p21.32  | rs7453920  |
-|6p21.32  | rs2051549  |
-|6p21.32  | rs6902723  |
-|6p21.32  | rs6903130  |
-|6p21.32  | rs9296044  |
-|6p21.32  | rs2857212  |
-|6p21.32  | rs2621382  |
-|6p21.32  |  rs241427  |
-|6p21.32  | rs9276825  |
-|6p21.32  |  rs241403  |
-|6p21.32  | rs3101942  |
-|6p21.32  | rs1050391  |
-|6p21.32  | rs11539216 |
-|6p21.32  | rs17840186 |
-|6p21.32  | rs3129305  |
-|6p21.32  | rs3130578  |
-|6p21.32  | rs3130179  |
+|Cytoband |    SNP    |
+|:--------|:---------:|
+|6p22.1   | rs1632953 |
+|6p22.1   | rs1059174 |
+|6p22.1   | rs1736921 |
+|6p22.1   | rs1736916 |
+|6p22.1   | rs1736913 |
+
+```
+## 
+## 6p21.32 6p21.33  6p22.1 
+##      46      61      12
+```
 
 ### Variants disrupting microRNAs and snoRNAs (wgRna)
 
@@ -296,6 +188,138 @@ Table: Results of variants disrupting microRNAs and snoRNAs.
 |wgRNA      |    SNP    |
 |:----------|:---------:|
 |Name=ACA38 | rs2736172 |
+
+### Variants located in segmental duplication
+
+
+Table: Results of variants located in segmental duplication region.
+
+|Segmental Duplication |    SNP    |
+|:---------------------|:---------:|
+|Score=0.898257        | rs2516675 |
+|Score=0.8991          | rs3130531 |
+|Score=0.8991          | rs3095250 |
+|Score=0.8991          | rs3130532 |
+|Score=0.8991          | rs3130534 |
+|Score=0.8991          | rs3132486 |
+|Score=0.934896        | rs2523535 |
+|Score=0.934896        | rs2523534 |
+|Score=0.928926        | rs2596517 |
+|Score=0.928926        | rs9267247 |
+
+
+### Variants identified in previous GWAS
+
+
+Table: Results from previous genome-wide association studies.
+
+|Previous GWAS                                                     |    SNP    |
+|:-----------------------------------------------------------------|:---------:|
+|Stevens-Johnson syndrome and toxic epidermal necrolysis (SJS-TEN) | rs3130501 |
+|Type 2 diabetes                                                   | rs3132524 |
+|Psychosis (atypical)                                              | rs2736172 |
+|Hepatitis C induced liver cirrhosis                               | rs910049  |
+|Multiple sclerosis                                                | rs3129934 |
+|Sarcoidosis                                                       | rs2076530 |
+|Vitiligo                                                          | rs3806156 |
+|Type 1 diabetes                                                   | rs9268645 |
+|Ulcerative colitis                                                | rs9268877 |
+|Chronic hepatitis B infection,Hepatitis B,Lymphoma                | rs7453920 |
+|Systemic lupus erythematosus                                      | rs2051549 |
+
+### Variants in ENCODE annotated region
+* Varinats located in transcribed regions in the RNA-Seq data for GM12878 cell lines
+
+#### Variants are located in transcribed regions in the RNA-Seq data for GM12878 cell lines
+
+
+Table: Variants located in transcribed regions in the RNA-Seq data for GM12878 cell lines.
+
+|RNA_seq_raw |    SNP    |
+|:-----------|:---------:|
+|514097      | rs1632953 |
+|514098      | rs1736921 |
+|514102      | rs1736916 |
+|514103      | rs1736913 |
+|514106      | rs1610603 |
+
+#### Variants located in H3K4me1 ENCODE
+
+Table: Variants located in H3K4me1 region in ENCODE database.
+
+|H3K4me1 |    SNP    |
+|:-------|:---------:|
+|H3k4me1 | rs1736916 |
+|H3k4me1 | rs1736913 |
+|H3k4me1 | rs1610603 |
+|H3k4me1 | rs1737068 |
+|H3k4me1 | rs1737060 |
+
+#### Variants in H3K4me3 ENCODE
+
+Table: Variants located in H3K4me3 region in ENCODE database.
+
+|H3K4me3 |    SNP    |
+|:-------|:---------:|
+|H3k4me3 | rs1736916 |
+|H3k4me3 | rs1736913 |
+|H3k4me3 | rs1610603 |
+|H3k4me3 | rs2073723 |
+|H3k4me3 | rs2523638 |
+
+#### Variants in H3K9ac ENCODE
+
+Table: Variants located in H3K9ac region in ENCODE database.
+
+|H3K9ac |    SNP    |
+|:------|:---------:|
+|H3k9ac | rs1736916 |
+|H3k9ac | rs1736913 |
+|H3k9ac | rs1610603 |
+|H3k9ac | rs2596571 |
+|H3k9ac | rs760293  |
+
+#### Variants in H3K27ac ENCODE
+
+Table: Variants located in H3K27ac region in ENCODE database.
+
+|H3K27ac |    SNP    |
+|:-------|:---------:|
+|H3k27ac | rs2596571 |
+|H3k27ac | rs2227127 |
+|H3k27ac | rs9276429 |
+|H3k27ac | rs9276431 |
+|H3k27ac | rs9276432 |
+
+#### variants are located in DNase I hypersensitivity sites from ENCODE
+
+Table: Variants located in DNase I hypersensitivity region in ENCODE database.
+
+|DNASE       |    SNP    |
+|:-----------|:---------:|
+|DNase_hyper | rs1736916 |
+|DNase_hyper | rs1610603 |
+|DNase_hyper | rs1610630 |
+|DNase_hyper | rs3095345 |
+|DNase_hyper | rs2233969 |
+
+
+|SNP       |Gene      |       BP|H3K4me1 |H3K4me3 |H3K9ac |H3K27ac |TFBS |DNASE       |
+|:---------|:---------|--------:|:-------|:-------|:------|:-------|:----|:-----------|
+|rs1632953 |HLA-F     | 29692305|NA      |NA      |NA     |NA      |NA   |NA          |
+|rs1059174 |HLA-F-AS1 | 29694427|NA      |NA      |NA     |NA      |NA   |NA          |
+|rs1736921 |HLA-F-AS1 | 29696209|NA      |NA      |NA     |NA      |NA   |NA          |
+|rs1736916 |HLA-F-AS1 | 29704083|H3k4me1 |H3k4me3 |H3k9ac |NA      |NA   |DNase_hyper |
+|rs1736913 |HLA-F-AS1 | 29704400|H3k4me1 |H3k4me3 |H3k9ac |NA      |NA   |NA          |
+
+Figure Venn diagram of ENCODE data
+
+
+```
+## [1] 1
+```
+
+<img src="ENCODE.png" width="50%" style="display: block; margin: auto;" />
 
 # RegulomeDB results
 
@@ -322,7 +346,7 @@ Table: RegulomeDB score.
 
 Figure Bar chart representing RegulomeDB score
 <div class="figure" style="text-align: center">
-<img src="T1D_MS_files/figure-html/unnamed-chunk-17-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
+<img src="T1D_MS_files/figure-html/unnamed-chunk-28-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
 <p class="caption">Figure 1: Bar chart representing RegulomeDB score</p>
 </div>
 
