@@ -32,6 +32,7 @@ library(plotly)
 library(VennDiagram)
 library(RColorBrewer)
 library(png)
+library(plyr)
 ```
 
 * raw_data.txt file was generated from previous researches on Type-1-diabetes and multiple sclerosis.  
@@ -137,9 +138,9 @@ knitr::kable(Ref_T1D[1:5, ], align = "lccrr", caption = "Table representing SNPs
 
 ### Conserved genomic elements annotation
 ```{r}
-Con_GE <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_consgenele.hg19_phastConsElements46way") %>%
+Con_GE <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_consgenele.hg19_phastConsElements46way") %>%
   separate(V2, c("Con_Sequence_score", "LOD"), sep = ";") %>% 
-  rename(SNP = V8) %>% 
+  dplyr::rename(SNP = V8) %>% 
   select(Con_Sequence_score, SNP)
 
 
@@ -151,10 +152,10 @@ knitr::kable(Con_GE, align = "lccrr", caption = "Conserved Genomic Score from NC
 ### Transcription factor binding site
 
 ```{r}
-TFBS <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_TFBS.hg19_tfbsConsSites") %>%
+TFBS <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_TFBS.hg19_tfbsConsSites") %>%
   separate(V2, into = c("Score", "TFBS"), sep = 17) %>% # selecting TFBS site after 17
   select(TFBS, V8) %>%
-  rename(SNP = V8) %>% 
+  dplyr::rename(SNP = V8) %>% 
   separate(TFBS, c("TFBS", "V1")) %>% 
   select(TFBS, SNP)
 
@@ -164,9 +165,9 @@ knitr::kable(TFBS, align = "lccrr", caption = "Results from Transcription Factor
 ### Cytogenic band
 
 ```{r}
-CB <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_cytoband.hg19_cytoBand") %>% 
+CB <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_cytoband.hg19_cytoBand") %>% 
   select(V2, V8) %>% 
-  rename(Cytoband = V2, SNP = V8) 
+  dplyr::rename(Cytoband = V2, SNP = V8) 
 
 knitr::kable(CB[1:5, ], align = "lccrr", caption = "Cytogenetic band of all SNPs.")
 
@@ -176,9 +177,9 @@ table(CB$Cytoband)
 ### Variants disrupting microRNAs and snoRNAs (wgRna)
 
 ```{r}
-micro_sno <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_wgRna.hg19_wgRna") %>% 
+micro_sno <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_wgRna.hg19_wgRna") %>% 
   select(V2, V8) %>% 
-  rename(wgRNA = V2, SNP = V8)
+  dplyr::rename(wgRNA = V2, SNP = V8)
 
 knitr::kable(micro_sno, align = "lccrr", caption = "Results of variants disrupting microRNAs and snoRNAs.")
 ```
@@ -189,7 +190,7 @@ knitr::kable(micro_sno, align = "lccrr", caption = "Results of variants disrupti
 seg_dup <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_seg_dup.hg19_genomicSuperDups") %>%
   separate(V2, c('Segmental Duplication', 'Name'), sep = ";") %>% 
   select('Segmental Duplication', V8) %>% 
-  rename(SNP = V8)
+  dplyr::rename(SNP = V8)
 
 knitr::kable(seg_dup, align = "lccrr", caption = "Results of variants located in segmental duplication region.")
 ```
@@ -198,10 +199,10 @@ knitr::kable(seg_dup, align = "lccrr", caption = "Results of variants located in
 ### Variants identified in previous GWAS
 
 ```{r}
-PreGWAS <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_GWAS_SNP.hg19_gwasCatalog") %>%
+PreGWAS <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_GWAS_SNP.hg19_gwasCatalog") %>%
   separate(V2, c("Name", "Previous GWAS"), sep = "=") %>% 
   select("Previous GWAS", V8) %>% 
-  rename(SNP = V8)
+  dplyr::rename(SNP = V8)
 
 knitr::kable(PreGWAS, align = "lccrr", caption = "Results from previous genome-wide association studies.")
 ```
@@ -212,59 +213,59 @@ knitr::kable(PreGWAS, align = "lccrr", caption = "Results from previous genome-w
 #### Variants are located in transcribed regions in the RNA-Seq data for GM12878 cell lines
 
 ```{r}
-RNA_seq_var <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_ENCODE_anno.hg19_wgEncodeCaltechRnaSeqRawSignalRep1Gm12878CellLongpolyaBb12x75") %>% 
+RNA_seq_var <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_ENCODE_anno.hg19_wgEncodeCaltechRnaSeqRawSignalRep1Gm12878CellLongpolyaBb12x75") %>% 
   separate(V2, c("Name", "RNA_seq_raw"), sep = -6) %>% 
   select(RNA_seq_raw, V8) %>% 
-  rename(SNP = V8)
+  dplyr::rename(SNP = V8)
 
 knitr::kable(RNA_seq_var[1:5, ], align = "lccrr", caption = "Variants located in transcribed regions in the RNA-Seq data for GM12878 cell lines.")
 ```
 
 #### Variants located in H3K4me1 ENCODE
 ```{r}
-H3K4me1 <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K4me1.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k4me1") %>%
+H3K4me1 <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K4me1.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k4me1") %>%
   separate(V1, c("V1", "H3K4me1"), sep = -7) %>% 
     select(H3K4me1, V8) %>% 
-  rename(SNP = V8)
+  dplyr::rename(SNP = V8)
 
 knitr::kable(H3K4me1[1:5, ], align = "lccrr", caption = "Variants located in H3K4me1 region in ENCODE database.")
 ```
 
 #### Variants in H3K4me3 ENCODE
 ```{r}
-H3K4me3 <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K4me3.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k4me3") %>%
+H3K4me3 <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K4me3.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k4me3") %>%
   separate(V1, c("V1", "H3K4me3"), sep = -7) %>% 
     select(H3K4me3, V8) %>% 
-  rename(SNP = V8)
+  dplyr::rename(SNP = V8)
 
 knitr::kable(H3K4me3[1:5, ], align = "lccrr", caption = "Variants located in H3K4me3 region in ENCODE database.")
 ```
 
 #### Variants in H3K9ac ENCODE
 ```{r}
-H3K9ac <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K9ac.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k9ac") %>%
+H3K9ac <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K9ac.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k9ac") %>%
   separate(V1, c("V1", "H3K9ac"), sep = -6) %>% 
     select(H3K9ac, V8) %>% 
-  rename(SNP = V8)
+  dplyr::rename(SNP = V8)
 
 knitr::kable(H3K9ac[1:5, ], align = "lccrr", caption = "Variants located in H3K9ac region in ENCODE database.")
 ```
 
 #### Variants in H3K27ac ENCODE
 ```{r}
-H3K27ac <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K27ac.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k27ac") %>%
+H3K27ac <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_H3K27ac.hg19_wgEncodeBroadChipSeqPeaksGm12878H3k27ac") %>%
   separate(V1, c("V1", "H3K27ac"), sep = -7) %>% 
     select(H3K27ac, V8) %>% 
-  rename(SNP = V8)
+  dplyr::rename(SNP = V8)
 
 knitr::kable(H3K27ac[1:5, ], align = "lccrr", caption = "Variants located in H3K27ac region in ENCODE database.")
 ```
 
 #### variants are located in DNase I hypersensitivity sites from ENCODE
 ```{r}
-DNase_I_hyper <- fread("file:///C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_DNASE.hg19_wgEncodeRegDnaseClustered") %>% 
+DNase_I_hyper <- fread("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/T1D_MS/T1D_MS_new/ANNOVAR_RESULTS/Region_based/T1D_DNASE.hg19_wgEncodeRegDnaseClustered") %>% 
   select(V1, V8) %>% 
-  rename(DNASE = V1, SNP = V8)
+  dplyr::rename(DNASE = V1, SNP = V8)
   
 DNase_I_hyper$DNASE <- "DNase_hyper"
 
@@ -272,16 +273,10 @@ knitr::kable(DNase_I_hyper[1:5, ], align = "lccrr", caption = "Variants located 
 ```
 
 ```{r}
-ENCODE_ANN <- Ref_T1D %>%
-  left_join(H3K27ac, by = "SNP") %>%
-  left_join(H3K9ac, by = "SNP") %>%
-  left_join(H3K4me3, by = "SNP") %>%
-  left_join(H3K4me1, by = "SNP") %>%
-  left_join(TFBS, by = "SNP") %>%
-  left_join(DNase_I_hyper, by = "SNP") %>%
+ENCODE_ANN <- join_all(list(Ref_T1D, H3K4me3, H3K9ac, H3K27ac, H3K4me1, TFBS, DNase_I_hyper), by = 'SNP', type = 'left') %>%
   select(SNP, Gene, BP_1, H3K4me1, H3K4me3, H3K9ac, H3K27ac, TFBS, DNASE) %>%
-  rename(BP = "BP_1")
-
+  dplyr::rename(BP = "BP_1")
+  
 knitr::kable(ENCODE_ANN[1:5, ])
 ```
 
@@ -290,14 +285,10 @@ Figure Venn diagram of ENCODE data
 ```{r}
 Known_SNP <- Known_T1D %>%
   select(SNP)
+
 Known_SNP$SNP <- as.character(Known_SNP$SNP)
 
-Known_res <- Known_SNP %>%
-  left_join(H3K4me3, by = "SNP") %>%
-  left_join(H3K9ac, by ="SNP") %>%
-  left_join(H3K27ac, by = "SNP") %>%
-  left_join(H3K4me1, by = "SNP") %>%
-  left_join(DNase_I_hyper, by = "SNP")
+Known_res <- join_all(list(Known_SNP, H3K4me3, H3K9ac, H3K27ac, H3K4me1, DNase_I_hyper))
 
 H3K4me1 <- Known_res[!is.na(Known_res$H3K4me1),"SNP"]
 H3K4me3 <- Known_res[!is.na(Known_res$H3K4me3),"SNP"]
@@ -328,7 +319,7 @@ venn.diagram(
   cat.dist = c(0.07, -0.07, -0.07, -0.07,  -0.07))
 ```
 
-```{r fig.align="center", out.width = "50%"}
+```{r fig.align="center", out.width = "50%", fig.cap="Figure 1: Venn diagram presenting histone modification"}
 knitr::include_graphics("ENCODE.png")
 ```
 
@@ -363,7 +354,7 @@ table(RDB_T1D$RDB_score)
 ```
 
 Figure Bar chart representing RegulomeDB score
-```{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure 1: Bar chart representing RegulomeDB score"}
+```{r, fig.align="center", out.width = "75%", fig.cap="Figure 2: Bar chart representing RegulomeDB score"}
 ggplot(RDB_T1D, aes(x = RDB_score, fill = RDB_score))+
   geom_bar()+
   labs(x = "RegulomeDB score", y = "Total number of SNPs")+

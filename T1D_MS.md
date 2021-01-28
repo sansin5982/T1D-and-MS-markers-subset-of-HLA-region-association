@@ -319,7 +319,10 @@ Figure Venn diagram of ENCODE data
 ## [1] 1
 ```
 
-<img src="ENCODE.png" width="50%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="ENCODE.png" alt="Figure 1: Venn diagram presenting histone modification" width="50%" />
+<p class="caption">Figure 1: Venn diagram presenting histone modification</p>
+</div>
 
 # RegulomeDB results
 
@@ -346,7 +349,7 @@ Table: RegulomeDB score.
 
 Figure Bar chart representing RegulomeDB score
 <div class="figure" style="text-align: center">
-<img src="T1D_MS_files/figure-html/unnamed-chunk-28-1.png" alt="Figure 1: Bar chart representing RegulomeDB score"  />
-<p class="caption">Figure 1: Bar chart representing RegulomeDB score</p>
+<img src="T1D_MS_files/figure-html/unnamed-chunk-28-1.png" alt="Figure 2: Bar chart representing RegulomeDB score" width="75%" />
+<p class="caption">Figure 2: Bar chart representing RegulomeDB score</p>
 </div>
 
